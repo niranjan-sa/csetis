@@ -719,6 +719,7 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Basic Details</title>
 	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
 	<style>
 		.affix {
 		  top: 0;
@@ -727,6 +728,14 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 
 	  .affix + .container-fluid {
 		  padding-top: 70px;
+	  }
+
+	  .panel-heading {
+	  	text-align: center;
+	  }
+
+	  body{
+			font-family: 'Nunito', sans-serif;
 	  }
 	</style>
 	
@@ -774,10 +783,7 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 							</nav>
 
 	<div class="container-fluid">
-		<!--<div class="jumbotron">-->
-			
-				
-			<div class="header">
+			<div class="header" style="margin: 3%;">
 				<div class="row" style="padding-top: 2%;">
 					<div class="col-xs-3 " padding-right="10%" height="10%">
 						<br>
@@ -798,7 +804,6 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 				<div class="col-md-1 col-xs-0"></div>
 				<div class="col-md-10 col-xs-12">
 						<div class="row" align="center" style="padding-top: 1%;" id="bscdet">
-
 							<div class="col-xs-12" style="margin-left: 1%" align="left">
 										<div class="panel panel-primary">
 											<div class="panel-heading">												
@@ -901,11 +906,19 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 											
 											<div class="panel-body">
 
-												<div class="col-xs-8"></div>
-													<div class="col-xs-4">
+
+												<div class="row">
+										
+													<div class="col-md-2 col-xs-3">
 													<button data-toggle="collapse" class="btn btn-info" data-target="#demo3">Collapsible</button>	
-													<button type="button" class="btn btn-default btn-md" style="float: right;"><a href="../../Forms/Form13/">Edit</a></button>
-												</div><br><br><br>
+													
+													</div>
+													
+													<div class="col-md-1 col-xs-2">
+													<a href="../../Forms/Form13/"><button type="button" class="btn btn-default btn-md" style="float: right;">Edit</button></a>
+													</div>
+													
+												</div><hr><br><br><br>
 
 												<div class="col-xs-12 collapse" id="demo3">
 													<!--Copy code below -->
@@ -1050,13 +1063,18 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 											<div class="panel-heading"><h3>Books Published</h3></div>
 											
 											<div class="panel-body">
+
 												<div class="row">
-													<div class="col-xs-8"></div>
-													<div class="col-xs-4">
-													<button data-toggle="collapse" class="btn btn-info" data-target="#demo1">Collapsible</button>	
-													<a href="../../Forms/Form4/"><button type="button" class="btn btn-default btn-md" style="float: right;">Add Book</button></a>
+													<div class="col-md-2 col-xs-3">
+														<button data-toggle="collapse" class="btn btn-info" data-target="#demo1">Collapsible</button>				
 													</div>
-												</div><br><br><br>
+
+													<div class="col-md-1 col-xs-2">
+														<a href="../../Forms/Form4/">
+														<button type="button" class="btn btn-default btn-md" style="float: right;">Add Book</button></a>
+													</div>
+												</div><hr><br><br><br>
+
 												<div class="col-xs-12 collapse" id="demo1">
 														<?php 
 																$query = "SELECT * FROM `bookpublished` WHERE `userid`='$a' ";
@@ -1221,14 +1239,21 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 
 
 											<div class="panel-body">
-
-												<div class="col-xs-8"></div>
-													<div class="col-xs-4">
+												<div class="row">
+										
+													<div class="col-md-2 col-xs-3">
 													<button data-toggle="collapse" class="btn btn-info" data-target="#demo2">Collapsible</button>	
-													<a href="../../Forms/Form6/"><button type="button" class="btn btn-default btn-md" style="float: right;">Add Event</button></a>
-												</div><br><br>
-
+													
+													</div>
+													<div class="col-md-1 col-xs-2">
+													<a href="../../Forms/Form6/">
+													<button type="button" class="btn btn-default btn-md" style="float: right;">Add Event</button></a>
+													</div>
+												</div><hr><br>
 												<br>
+												<br>
+
+										
 		
 
 												<div class="col-xs-12 collapse" id="demo2">
@@ -1380,12 +1405,19 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 											<div class="panel-heading"><h3>Guest Lecture Delivered by Faculty</h3></div>
 											
 											<div class="panel-body">
-
-												<div class="col-xs-8"></div>
-													<div class="col-xs-4">
+												<div class="row">
+										
+													<div class="col-md-2 col-xs-3">
 													<button data-toggle="collapse" class="btn btn-info" data-target="#demo4">Collapsible</button>	
-													<a href="../../Forms/Form5/"><button type="button" class="btn btn-default btn-md" style="float: right;">Add Lecture</button></a>
-												</div><br><br><br>
+													
+													</div>
+													
+													<div class="col-md-1 col-xs-2">
+													<a href="../../Forms/Form5/">
+													<button type="button" class="btn btn-default btn-md" style="float: right;">Add Lecture</button></a>
+													</div>
+
+												</div><hr><br><br><br>
 
 												<div class="col-xs-12 collapse" id="demo4">
 														<div class="col-xs-6">
@@ -1475,11 +1507,19 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 											<div class="panel-heading"><h3>Guest Lecture Organised by faculty</h3></div>
 											
 											<div class="panel-body">
-												<div class="col-xs-8"></div>
-													<div class="col-xs-4">
+
+												<div class="row">
+										
+													<div class="col-md-2 col-xs-4">
 													<button data-toggle="collapse" class="btn btn-info" data-target="#demo5">Collapsible</button>	
-													<a href="../../Forms/Form7/"><button type="button" class="btn btn-default btn-md" style="float: right;">Add Lecture Org Info</button></a>
-												</div><br><br><br>
+													
+													</div>
+													<div class="col-md-2 col-xs-3">
+													<a href="../../Forms/Form7/">
+													<button type="button" class="btn btn-default btn-md" style="float: right;">Add Lecture Org Info</button></a>
+													</div>
+												</div><hr><br><br><br>
+									
 
 												<div class="col-xs-12 collapse" id="demo5">
 														<div class="col-xs-6">
@@ -1585,11 +1625,20 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 											<div class="panel-heading"><h3>Infrastructural Development</h3></div>
 											
 											<div class="panel-body">
-												<div class="col-xs-8"></div>
-													<div class="col-xs-4">
+
+												<div class="row">
+										
+													<div class="col-md-2 col-xs-3">
 													<button data-toggle="collapse" class="btn btn-info" data-target="#demo6">Collapsible</button>	
-													<a href="../../Forms/Form9/"><button type="button" class="btn btn-default btn-md" style="float: right;">Add I.D. Info</button></a>
-												</div><br><br><br>
+													
+													</div>
+													
+													<div class="col-md-1 col-xs-2">
+													<a href="../../Forms/Form9/">
+													<button type="button" class="btn btn-default btn-md" style="float: right;">Add I.D. Info</button></a>
+													</div>
+													
+												</div><hr><br><br><br>
 
 												<div class="col-xs-12 collapse" id="demo6">
 														<div class="col-xs-6">
@@ -1689,11 +1738,21 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 											<div class="panel-heading"><h3>Patents Filed/Awarded by Faculty and Student</h3></div>
 											
 											<div class="panel-body">
-												<div class="col-xs-8"></div>
-													<div class="col-xs-4">
+
+
+												<div class="row">
+										
+													<div class="col-md-2 col-xs-3">
 													<button data-toggle="collapse" class="btn btn-info" data-target="#demo8">Collapsible</button>	
-													<a href="../../Forms/Form11/"><button type="button" class="btn btn-default btn-md" style="float: right;">Add a Patent</button></a>
-												</div><br><br><br>
+													
+													</div>
+													
+													<div class="col-md-1 col-xs-2">
+													<a href="../../Forms/Form11/">
+													<button type="button" class="btn btn-default btn-md" style="float: right;">Add a Patent</button></a>
+													</div>
+													
+												</div><hr><br><br><br>
 
 												<div class="col-xs-12 collapse" id="demo8">
 														<div class="col-xs-6">
@@ -1791,11 +1850,23 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 											<div class="panel-heading"><h3>Project Grants Received by Faculty</h3></div>
 											
 											<div class="panel-body">
-												<div class="col-xs-8"></div>
-													<div class="col-xs-4">
+
+
+
+												<div class="row">
+										
+													<div class="col-md-2 col-xs-3">
 													<button data-toggle="collapse" class="btn btn-info" data-target="#demo9">Collapsible</button>	
+													
+													</div>
+													
+													<div class="col-md-1 col-xs-2">
 													<a href="../../Forms/Form12/"><button type="button" class="btn btn-default btn-md" style="float: right;">Add Grant Info</button></a>
-												</div><br><br><br>
+													</div>
+													
+												</div><hr><br><br><br>
+
+
 
 												<div class="col-xs-12 collapse" id="demo9">
 														<div class="col-xs-6">
@@ -1939,11 +2010,20 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 											<div class="panel-heading"><h3>Memorandum of Understanding (MoU)</h3></div>
 											
 											<div class="panel-body">
-												<div class="col-xs-8"></div>
-													<div class="col-xs-4">
+												<div class="row">
+										
+													<div class="col-md-2 col-xs-3">
 													<button data-toggle="collapse" class="btn btn-info" data-target="#demo10">Collapsible</button>	
+													
+													</div>
+													
+													<div class="col-md-1 col-xs-2">
 													<a href="../../Forms/Form10/"><button type="button" class="btn btn-default btn-md" style="float: right;">Add MOU Info</button></a>
-												</div><br><br><br>
+													</div>
+													
+												</div><hr><br><br><br>
+
+
 
 												<div class="col-xs-12 collapse" id="demo10">
 														<div class="col-xs-6">
@@ -2021,11 +2101,19 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 											<div class="panel-heading"><h3>Foregin Travel</h3></div>
 											
 											<div class="panel-body">
-												<div class="col-xs-8"></div>
-													<div class="col-xs-4">
+												<div class="row">
+										
+													<div class="col-md-2 col-xs-3">
 													<button data-toggle="collapse" class="btn btn-info" data-target="#demo12">Collapsible</button>	
+													
+													</div>
+													
+													<div class="col-md-1 col-xs-2">
 													<a href="../../Forms/Form8/"><button type="button" class="btn btn-default btn-md" style="float: right;">Add a foreign travel</button></a>
-												</div><br><br><br>
+													</div>
+													
+												</div><hr><br><br><br>
+
 
 												<div class="col-xs-12 collapse" id="demo12">
 														<div class="col-xs-6">
@@ -2104,6 +2192,10 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 				</div>
 			</div>
 			</div>
+		</div>
+		<div class="footer" style="text-align: center;">
+			<hr>
+			<p class="primary">TIS for the CSE Dept. WCE</p>
 		</div>
 		<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
