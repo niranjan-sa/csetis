@@ -1,0 +1,12 @@
+body{
+		
+}
+.fbox{
+	text-align: center;
+}
+.fbox span{
+	font-size:40px;
+}
+.jumbotron{
+	text-align:center;
+}
