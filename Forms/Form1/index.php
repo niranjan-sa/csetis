@@ -119,7 +119,20 @@ function cleared_input($data) {
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Basic Details</title>
-	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">		
+	<script>
+		function validateForm() {
+	    var x = document.forms["myForm"]["fullname"].value;
+	    var y = document.forms["myForm"]["namefathus"].value;
+	    var z = document.forms["myForm"]["extrahiqual"].value;
+	    var patt=/[0-9]/;
+
+	    if (patt.test(x) || patt.test(y) || patt.test(z)) {
+	        alert("No digits are allowed in name fields");
+	        return false;
+	    	}
+		}
+	</script>
 </head>
 <body>
 <body>
@@ -143,7 +156,7 @@ function cleared_input($data) {
 
 		<div class="row" align="center" style="padding-top: 7%;">
 			<div class="col-xs-10" style="margin-left: 8%">
-					<form action="index.php" role="form" method="post">
+					<form action="index.php" role="form" name="myForm" onSubmit="return validateForm()"method="post">
 						<div class="panel panel-primary">
 							<div class="panel-heading"><h3>Basic Details</h3></div>
 							
@@ -265,7 +278,7 @@ function cleared_input($data) {
 								<div class="col-xs-6" >
 									<div class="panel panel-default">
 											
-											<div class="form-group" style="margin-top: 5%;">
+											<div class="form-group"  style="margin-top: 5%;">
 												<label for="">
 														<h4>Highest Qualification *</h4>
 												</label>
@@ -371,6 +384,7 @@ function cleared_input($data) {
 							<div class="panel-footer">
 								<button type="submit" class="btn btn-default btn-md" value="submit">Submit</button>
 							</div>
+
 						</div>
 					</form>
 				</div>

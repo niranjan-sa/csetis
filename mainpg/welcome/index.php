@@ -816,6 +816,55 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 													<div class="col-xs-4"><button type="button" class="btn btn-default btn-md" 	style="float: right;"><a href="../../Forms/Form1/">Edit</a></button>
 													</div>
 												</div><br>
+
+												<caption><strong>Basic Details</strong></caption>
+												<table class="table">
+														<tr>
+															<th>Gender</th>
+															<td><?php echo "$gender"; ?></td>
+														</tr>
+														<tr>
+															<th>Name of father and husband</th>
+															<td><?php echo "$namefathus"; ?></td>
+														</tr>
+														<tr>
+															<th>Mother's Name</th>
+															<td><?php echo "$mothername"; ?></td>
+														</tr>
+														<tr>
+															<th>Academic Position</th>
+															<td><?php echo "$academicpos"; ?></td>
+														</tr>
+														<tr>
+															<th>Date of Birth</th>
+															<td><?php echo "$dob"; ?></td>
+														</tr>
+														<tr>
+															<th>Highest Qualification</th>
+															<td><?php echo "$highestqual"; ?></td>
+														</tr>
+														<tr>
+															<th>Highest Qualification (Other)</th>
+															<td><?php echo "$extrahiqual"; ?></td>
+														</tr>
+														<tr>
+															<th>Status of Highest Qualification</th>
+															<td><?php echo "$statushiqual"; ?></td>
+														</tr>
+														<tr>
+															<th>Type of Appointment</th>
+															<td><?php echo "$toa"; ?></td>
+														</tr>
+														<tr>
+															<th>Wing of Appointment</th>
+															<td><?php echo "$woa"; ?></td>
+														</tr>
+
+												</table>
+
+
+
+												<!--111111
 												<div class="col-xs-6">
 													<div class="panel panel-primary">
 
@@ -823,33 +872,33 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 															<h3><span style="margin-top: 1%;" class="label label-default md">Welcome <?php echo "$title $fullname"; ?></span></h3> 
 															<div class="row">
 																<div class="col-xs-6"><h5 style="color: purple;"><strong>Gender -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$gender"; ?></strong></h5></div>
+																<div class="col-xs-6"><h5 style="color: #663300;"><strong></strong></h5></div>
 															</div>
 
 															<div class="row">
 																<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of father and husband -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$namefathus"; ?></strong></h5></div>
+																<div class="col-xs-6"><h5 style="color: #663300;"><strong></strong></h5></div>
 															</div>
 
 
 															<div class="row">
 																<div class="col-xs-6"><h5 style="color: purple;"><strong>Mother's Name -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$mothername"; ?></strong></h5></div>
+																<div class="col-xs-6"><h5 style="color: #663300;"><strong></strong></h5></div>
 															</div>
 
 															<div class="row">
 																<div class="col-xs-6"><h5 style="color: purple;"><strong>Academic Position -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$academicpos"; ?></strong></h5></div>
+																<div class="col-xs-6"><h5 style="color: #663300;"><strong></strong></h5></div>
 															</div>
 
 															<div class="row">
 																<div class="col-xs-6"><h5 style="color: purple;"><strong>Date of Birth -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$dob"; ?></strong></h5></div>
+																<div class="col-xs-6"><h5 style="color: #663300;"><strong></strong></h5></div>
 															</div>
 
 															<div class="row">
 																<div class="col-xs-6"><h5 style="color: purple;"><strong>Highest Qualification -</strong></h5 style="color: #663300;"></div>
-																<div class="col-xs-6"><h5><strong><?php echo "$highestqual"; ?></strong></h5></div>
+																<div class="col-xs-6"><h5><strong></strong></h5></div>
 															</div>
 															<br>
 															<br>
@@ -858,36 +907,37 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 													</div>
 												</div>
 												<div class="col-xs-6">
-													<!--<div class="row" id="photo">
+													<!-- <div class="row" id="photo">
 														<div class="panel panel-info"></div>
-													</div> -->
+													</div> --><!--
 													<div class="row">
 														<div class="panel panel-primary">
 															<div class="well" style="margin: 2%; font-weight: uppercase;">
 															
 															<div class="row">
 																<div class="col-xs-6"><h5 style="color: purple;"><strong>Highest Qualification (Other) -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$extrahiqual"; ?></strong></h5></div>
+																<div class="col-xs-6"><h5 style="color: #663300;"><strong></strong></h5></div>
 															</div>
 
 															<div class="row">
 																<div class="col-xs-6"><h5 style="color: purple;"><strong>Status of Highest Qualification -</strong</h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$statushiqual"; ?></strong></h5></div>
+																<div class="col-xs-6"><h5 style="color: #663300;"><strong></strong></h5></div>
 															</div>
 
 															<div class="row">
 																<div class="col-xs-6"><h5 style="color: purple;"><strong>Type of Appointment -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$toa"; ?></strong></h5></div>
+																<div class="col-xs-6"><h5 style="color: #663300;"><strong></strong></h5></div>
 															</div>
 
 															<div class="row">
 																<div class="col-xs-6"><h5 style="color: purple;"><strong>Wing of Appointment -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$woa"; ?></strong></h5></div>
+																<div class="col-xs-6"><h5 style="color: #663300;"><strong></strong></h5></div>
 															</div>
 														</div>
 														</div>
 													</div>
 												</div>
+												11111-->
 											</div>
 											
 											<div class="panel-footer">
@@ -897,7 +947,7 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 							</div>
 
 						</div>
-
+	
 						<div class="row" align="center" style="padding-top: 1%;" id="edudet">
 
 							<div class="col-xs-12" style="margin-left: 1%" align="left">

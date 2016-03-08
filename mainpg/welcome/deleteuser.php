@@ -38,7 +38,14 @@ if(isset($_POST['username'])) {
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Login Page</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+	<script>
+		function validateForm () {
+			console.log("Jumbo");
+			alert("Do you want to delete the user??");
+			return true;
+		}
+	</script>
 </head>
 <body>
 	<div class="container-fluid">
@@ -47,7 +54,7 @@ if(isset($_POST['username'])) {
 				<div class="row" style="padding-top: 2%;">
 					<div class="col-xs-3 " padding-right="10%" height="10%">
 						<br>
-						<img src="img/Walchand_11.gif" class="img-responsive" alt="Responsive Image" align="right"  />
+						<img src="../../bootstrap/img/Walchand_11.gif" class="img-responsive" alt="Responsive Image" align="right"  />
 					</div>
 					<div class="col-xs-9 ">
 						<h1 style="text-align: left;">Walchand College of Engineering, Sangli.</h1>
@@ -73,7 +80,7 @@ if(isset($_POST['username'])) {
 				<div class="panel panel-primary">
 					<div class="panel-heading"><h3>Delete User</h3></div>
 					<div class="panel-body">
-						<form action="deleteuser.php" role="form" method="post">
+						<form action="deleteuser.php" onSubmit="return validateForm()" role="form" method="post">
 							<div class="form-group">
 								<label for="username"><h4>Enter Username </h4> </label><br>
 								<class class="col-xs-8" style="margin-left: 17%;">
@@ -98,7 +105,8 @@ if(isset($_POST['username'])) {
 		</div>
 	</div>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+	<script src="../../ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="../../maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 </body>
 </html>
