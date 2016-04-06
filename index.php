@@ -1,7 +1,8 @@
 
 <!--Main Page of the project the login page -->
-<?php 
 
+<?php 
+//trial
 include 'core.inc.php';
 include 'connect.inc.php';
 include 'info.php';
