@@ -68,6 +68,30 @@ function cleared_input($data) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Guest Lecture Delivered by Faculty</title>
 	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript">
+	function validateForm(){
+		var facultynm=document.forms["myForm"]["nameofthefaculty"].value;
+		var orgnm=document.forms["myForm"]["nameoforganization"].value;
+		var place=document.forms["myForm"]["place"].value;
+		var titleoflecture=document.forms["myForm"]["titleoflecture"].value;
+		var numberofstudents=document.forms["myForm"]["numberofstudents"].value;
+		var patt=/[0-9]/;
+		//console.log(" here ");
+
+		if(patt.test(facultynm) || patt.test(orgnm) || patt.test(place) || patt.test(titleoflecture))
+		{
+			alert("No digits are allowed in name fields");
+			return false;
+		}
+
+		if(!patt.test(numberofstudents))
+		{
+			alert("Only digits are allowed in number fields");
+			return false;
+		}
+
+	}
+	</script>
 </head>
 <body>
 <body>
@@ -91,7 +115,7 @@ function cleared_input($data) {
 
 		<div class="row" align="center" style="padding-top: 7%;">
 			<div class="col-xs-10" style="margin-left: 8%">
-					<form action="index.php" role="form" method="POST">
+					<form action="index.php" role="form"  name="myForm" onSubmit="return validateForm()" method="POST">
 						<div class="panel panel-primary">
 							<div class="panel-heading"><h3>Guest Lecture Delivered by Faculty</h3></div>
 							
@@ -279,4 +303,3 @@ function cleared_input($data) {
 <script src="../../bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
-s

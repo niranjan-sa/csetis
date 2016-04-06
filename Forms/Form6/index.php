@@ -90,6 +90,62 @@ function cleared_input($data) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Event Organised</title>
 	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript">
+	function validateForm(){
+				var conm=document.forms["myForm"]["coordinatorname"].value;	
+				var coconm=document.forms["myForm"]["cocoordinatorname"].value;
+				var toe=document.forms["myForm"]["toe"].value;
+				var nmres1=document.forms["myForm"]["nameofresource1"].value;
+				var nmres2=document.forms["myForm"]["nameofresource2"].value;
+				var nmres3=document.forms["myForm"]["nameofresource3"].value;
+				var nmres4=document.forms["myForm"]["nameofresource4"].value;
+				var totalparticipants=document.forms["myForm"]["totalparticipants"].value;
+				var wceparticipants=document.forms["myForm"]["wceparticipants"].value;
+				var nonwceparticipants=document.forms["myForm"]["nonwceparticipants"].value;
+				var totexpenditure=document.forms["myForm"]["expenditure"].value;
+				var otherthing=document.forms["myForm"]["otherthing"].value;
+				var irg=document.forms["myForm"]["irg"].value; 
+				var dos=document.forms["myForm"]["dos"].value;//console.log(dos);
+				var doe=document.forms["myForm"]["doe"].value;//console.log(doe);
+				var duration=document.forms["myForm"]["duration"].value;//console.log(duration);
+				var patt1=/[0-9]/;
+
+
+				/*var du=doe-dos;
+				console.log(du);
+
+				console.log(totalparticipants);
+				console.log(wceparticipants);
+				console.log(nonwceparticipants);*/
+
+				if(patt1.test(conm) || patt1.test(coconm) || patt1.test(toe) || patt1.test(nmres1) || patt1.test(nmres2) ||
+					patt1.test(nmres3) || patt1.test(nmres4) || patt1.test(otherthing))
+				{
+					 alert("No digits are allowed in name fields");
+	       					 return false;
+				}
+
+				if(!patt1.test(totalparticipants) || !patt1.test(wceparticipants) || !patt1.test(nonwceparticipants))
+				{
+					alert("Only digits allowed in Number fields");
+					return false;
+				}
+
+				/*if(totalparticipants!=(wceparticipants + nonwceparticipants))
+				{
+					alert("Total participants count error");
+					return false;
+				}
+				if(duration !=(doe - dos +1))
+				{
+					alert("Duration error");
+					return false;	
+				}
+*/
+
+	}
+	
+	</script>
 </head>
 <body>
 <body>
@@ -113,7 +169,7 @@ function cleared_input($data) {
 
 		<div class="row" align="center" style="padding-top: 7%;">
 			<div class="col-xs-10" style="margin-left: 8%">
-					<form action="index.php" role="form" method="post">
+					<form action="index.php" role="form" name="myForm" onSubmit="return validateForm()" method="post">
 						<div class="panel panel-primary">
 							<div class="panel-heading"><h3>Event Organized by Faculty and Staff</h3></div>
 							
@@ -262,7 +318,7 @@ function cleared_input($data) {
 
 											<div class="form-group">
 												<label for="" style="text-align: right;">
-														<h4>Name of Resourse Person1 *</h4>
+														<h4>Name of Resource Person1 *</h4>
 												</label>
 													
 												<div class="col-xs-5" style="float: right; margin-right: 8%;" >
@@ -274,7 +330,7 @@ function cleared_input($data) {
 
 											<div class="form-group">
 												<label for="" style="text-align: right;" style="margin-top: 5%;">
-														<h4>Name of Resourse Person2</h4>
+														<h4>Name of Resource Person2</h4>
 												</label>
 													
 												<div class="col-xs-5" style="float: right; margin-right: 8%;" >
@@ -284,7 +340,7 @@ function cleared_input($data) {
 
 											<div class="form-group">
 												<label for="" style="text-align: right;" style="margin-top: 5%;">
-														<h4>Name of Resourse Person 3</h4>
+														<h4>Name of Resource Person 3</h4>
 												</label>
 													
 												<div class="col-xs-5" style="float: right; margin-right: 8%;" >
@@ -301,7 +357,7 @@ function cleared_input($data) {
 									<div class="panel panel-default">
 											<div class="form-group" style="margin-top: 5%;">
 												<label for="" style="text-align: right;" style="margin-top: 5%;">
-														<h4>Name of Resourse Person4</h4>
+														<h4>Name of Resource Person4</h4>
 												</label>
 													
 												<div class="col-xs-5" style="float: right; margin-right: 8%;" >

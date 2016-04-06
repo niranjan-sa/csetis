@@ -69,6 +69,32 @@ function cleared_input($data) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Patents Filed/Awarded by Faculty and Student</title>
 	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript">
+	function validateForm(){
+		var firstauthor=document.forms["myForm"]["nameoffirstauthor"].value;
+		var coauthor=document.forms["myForm"]["nameofcoauthor"].value;
+		var titlepatent=document.forms["myForm"]["title"].value;
+		var patentnumber=document.forms["myForm"]["patentnumber"].value;
+
+		var patt1=/[0-9]/;
+		
+
+		if(patt1.test(firstauthor) || patt1.test(coauthor) || patt1.test(titlepatent) )
+				{
+					
+					 alert("No digits are allowed in name fields");
+	       					 return false;
+				}
+
+		if(!patt1.test(patentnumber)  )
+				{
+
+					alert("Only digits allowed in Number fields");
+					return false;
+				}
+
+	}
+	</script>
 </head>
 <body>
 <body>
@@ -92,7 +118,7 @@ function cleared_input($data) {
 
 		<div class="row" align="center" style="padding-top: 7%;">
 			<div class="col-xs-10" style="margin-left: 8%">
-					<form action="index.php" role="form" method="POST">
+					<form action="index.php" role="form" name="myForm" onSubmit="return validateForm()" method="POST">
 						<div class="panel panel-primary">
 							<div class="panel-heading"><h3>Patents Filed/Awarded by Faculty and Student</h3></div>
 							

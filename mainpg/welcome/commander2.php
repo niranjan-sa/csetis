@@ -49,6 +49,7 @@ if($query_run=mysql_query($query)) {
 					</div>	
 				</div>
 			</div>
+			<hr>
 		<!--</div>-->	
 
 		<div class="row" align="center" style="padding-top: 7%;">
@@ -70,7 +71,7 @@ if($query_run=mysql_query($query)) {
 						<div class="row" align="center" style="padding-top: 1%;">
 							<div class="col-xs-1"></div>
 							<div class="col-xs-4" style="margin-left: 1%;">
-								<legend>Users Registered <span class="badge"><?php echo $query_num_rows; ?></span></legend>
+								<legend>Users Registered </legend>
 							</div>
 							<div class="col-xs-7"></div>
 						</div>
@@ -79,25 +80,30 @@ if($query_run=mysql_query($query)) {
 							<div class="col-xs-1"></div>
 							<div class="col-xs-10" align="center" style="padding-top: 2%;">
 								<div class="panel panel-default">
-									<div class="panel-body">
-										<div class="col-xs-6">
+									<div class="panel-body" >
+									<div class="col-md-2"></div>
+									<div class="col-md-8">
+										<table class="table table-hover">
+										<tr>
+											<th>Sr. No.</th>
+											<th>Username</th>
+										</tr>
 										<?php 
-											for($i=0; $i<=$query_num_rows/2; $i++) {?>
-											<div class="row" align="center">
-												<a href="jump.php?user_id=<?php echo $id[$i];?>"><button class="btn btn-info"><?php echo $username[$i] ?></button></a>
-											</div><br>
-												 
-										<?php }?>	
-										</div>
-										<div class="col-xs-6">
-											<?php 
-												for($i=($query_num_rows/2)+1; $i<$query_num_rows; $i++) {?>
-													<div class="row" align="center">
-														<a href="jump.php?user_id=<?php echo $id[$i];?>"><button class="btn btn-info"><?php echo $username[$i] ?></button></a>	
-													</div><br>
-													
-											<?php	}?>
-										</div>	
+											for($i=0; $i<$query_num_rows;$i++) {
+												?>
+												<tr>
+													<td><?php echo $i+1 ?></td>
+													<td><a href="index.php?user_id=<?php echo $id[$i];?>"><?php echo $username[$i] ?></a></td>
+												</tr>
+												
+												<?php
+											}
+										 ?>
+									</table>	
+									</div>
+									<div class="col-md-2"></div>
+									
+
 									</div>
 								</div>
 							</div>

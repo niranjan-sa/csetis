@@ -47,17 +47,63 @@ if(isset($_POST['username']) && isset($_POST['passwd'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Login Page</title>
 	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<style>
+		.btn {
+			background-color: #f1f1f1;
+			text-decoration: blink;
+		}
+
+		.header {
+			
+			border-style: solid;
+			border-width: 0px;
+			border-radius: 25px;
+		}
+
+		.wce {
+			display: none;
+		}
+
+		
+		body {
+			background-color: 
+		}
+		
+		@media screen and (max-width:1024px) {
+			
+			#sam {
+				display: none;
+			}
+
+			#jc {
+				float: left;
+			}
+
+			.header {
+				background-color: #ffffff;
+			}
+
+			.wce {
+				display: inline;
+			}
+		}
+		
+
+	</style>
 </head>
 <body>
 	<div class="container-fluid">
 		<!--<div class="jumbotron">-->
 			<div class="header">
 				<div class="row" style="padding-top: 2%;">
-					<div class="col-xs-3 " padding-right="10%" height="10%">
+					<div class="col-md-3 " padding-right="10%" height="10%" id="jc">
 						<br>
 						<img src="../bootstrap/img/Walchand_11.gif" class="img-responsive" alt="Responsive Image" align="right"  />
 					</div>
-					<div class="col-xs-9 ">
+					<div class="wce">
+						<h2>Walchand College of Engineering</h2>
+					</div>
+					<div class="col-md-9 col-xs-12 " id="sam">
 						<h1 style="text-align: left;">Walchand College of Engineering, Sangli.</h1>
 						<h5 style="text-align: right; padding-right: 30%; font-weight: bold; font-style: italic;">(An autonomous institute.)</h5>
 						<h3 style="padding-left: 5%; font-weight: bold;">Department of Computer Science and Engineering.</h3>
@@ -66,10 +112,10 @@ if(isset($_POST['username']) && isset($_POST['passwd'])) {
 				</div>
 			</div>
 		<!--</div>-->	
-
-		<div class="row" align="center" style="padding-top: 7%;">
-			<div class="col-xs-4"></div>
-			<div class="col-xs-4" align="center" style="padding-left: 2%;">
+		<hr>
+		<div class="row down" align="center" id="ram" style="padding-top: 7%;">
+			<div class="col-md-4"></div>
+			<div class="col-md-4 col-xs-12" align="center" style="padding-left: 2%;">
 				<div class="panel panel-primary">
 					<div class="panel-heading"><h3>Login</h3></div>
 					<div class="panel-body">
@@ -85,9 +131,9 @@ if(isset($_POST['username']) && isset($_POST['passwd'])) {
 								<class class="col-xs-8" style="margin-left: 17%;">
 									<input type="password" class="form-control" id="passwd" name="passwd" required><br>
 								</class>
-							</div>
+							</div><br>
 							<div class="form-group">
-								<input type="submit" class="btn btn-default btn-md" value="submit"></input><br>
+								<input type="submit" class="btn btn-default btn-md" value="Submit"></input><br><br>
 								<p class="bg-danger"><?php echo $err;?></p>
 							</div>
 						</form>
@@ -99,7 +145,6 @@ if(isset($_POST['username']) && isset($_POST['passwd'])) {
 			</div>
 		</div>
 	</div>
-
 <script src="../bootstrap/js/jquery.min.js"></script>
 <script src="../bootstrap/js/bootstrap.min.js"></script>
 </body>

@@ -86,6 +86,39 @@ function cleared_input($data) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Project Grants Received by Faculty :</title>
 	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript">
+	function validateForm(){
+
+		var otherfundingagency=document.forms["myForm"]["otherfundingagency"].value;
+		var nameofprincipalinvestigator=document.forms["myForm"]["nameofprincipalinvestigator"].value;
+		var nameofcoinvestigator=document.forms["myForm"]["nameofcoinvestigator"].value;
+		var titleofproject=document.forms["myForm"]["titleofproject"].value;
+		var amountsantioned=document.forms["myForm"]["amountsantioned"].value;
+		var totalrevenue=document.forms["myForm"]["totalrevenue"].value;
+		var totalpaperspublished=document.forms["myForm"]["totalpaperspublished"].value;
+		var btechstudents=document.forms["myForm"]["btechstudents"].value;
+		var mtechstudents=document.forms["myForm"]["mtechstudents"].value;
+		var phdstudents=document.forms["myForm"]["phdstudents"].value;
+		var patt1=/[0-9]/;
+		
+
+		if(patt1.test(otherfundingagency) || patt1.test(nameofprincipalinvestigator) || patt1.test(nameofcoinvestigator) || patt1.test(titleofproject) )
+				{
+					
+					 alert("No digits are allowed in name fields");
+	       					 return false;
+				}
+
+		if(!patt1.test(amountsantioned) || !patt1.test(totalrevenue) || !patt1.test(btechstudents) || !patt1.test(mtechstudents) || !patt1.test(phdstudents) 
+			|| !patt1.test(totalpaperspublished))
+				{
+
+					alert("Only digits allowed in Number fields");
+					return false;
+				}
+
+	}
+	</script>
 </head>
 <body>
 <body>
@@ -109,7 +142,7 @@ function cleared_input($data) {
 
 		<div class="row" align="center" style="padding-top: 7%;">
 			<div class="col-xs-10" style="margin-left: 8%">
-					<form action="index.php" role="form" method="POST">
+					<form action="index.php" role="form" name="myForm" onSubmit="return validateForm()" method="POST">
 						<div class="panel panel-primary">
 							<div class="panel-heading"><h3>Project Grants Received by Faculty :</h3></div>
 							

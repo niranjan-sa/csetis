@@ -61,6 +61,31 @@ function cleared_input($data) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Foreign Travel</title>
 	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript">
+	function validateForm(){
+
+		var nof=document.forms["myForm"]["nof"].value;
+		var eov=document.forms["myForm"]["eov"].value;
+		var other=document.forms["myForm"]["other"].value;
+		var patt1=/[0-9]/;
+		
+
+		if(patt1.test(nof) || patt1.test(other) )
+				{
+					
+					 alert("No digits are allowed in name fields");
+	       					 return false;
+				}
+
+		if(!patt1.test(eov) )
+				{
+
+					alert("Only digits allowed in Number fields");
+					return false;
+				}
+
+	}
+	</script>
 </head>
 <body>
 <body>
@@ -84,7 +109,7 @@ function cleared_input($data) {
 
 		<div class="row" align="center" style="padding-top: 7%;">
 			<div class="col-xs-10" style="margin-left: 8%">
-					<form action="index.php" role="form" method="post">
+					<form action="index.php" role="form" name="myForm" onSubmit="return validateForm()" method="post">
 						<div class="panel panel-primary">
 							<div class="panel-heading"><h3>Foreign Travel</h3></div>
 							

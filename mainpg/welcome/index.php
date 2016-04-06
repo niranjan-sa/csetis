@@ -3,9 +3,11 @@
 include 'core.inc.php';
 include 'connect.inc.php';
 //error_reporting(E_ERROR | E_PARSE);
+//Handles 
 if(!isset($_SESSION['user_id'])) {
 	header("Location: ../index.php");
 }
+
 $a = $_SESSION['user_id'];
 $query22="SELECT `username` FROM `userlogin` WHERE `userid`='$a'";
 
@@ -737,6 +739,25 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 	  body{
 			font-family: 'Nunito', sans-serif;
 	  }
+
+	  #bod {
+	  	margin-top: 5%;
+	  }
+
+
+	  @media screen and (max-width:1024px) {
+			
+			.poo {
+				display: none;
+			}
+			
+			.pooimg {
+				float: center;
+			}
+
+		}
+
+
 	</style>
 	
 </head>
@@ -749,7 +770,7 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 								        <span class="icon-bar"></span>
 								        <span class="icon-bar"></span>                        
 								      </button>
-								      <a class="navbar-brand" href="#">Welcome <?php echo ", $username! "; ?></a>
+								      <a class="navbar-brand" href="#">Welcome <?php echo ", $username!! "; ?></a>
 								    </div>
 								    <div class="collapse navbar-collapse" id="myNavbar">
 								      <ul class="nav navbar-nav">
@@ -782,14 +803,14 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 								  </div>
 							</nav>
 
-	<div class="container-fluid">
+	<div class="container-fluid" id="bod">
 			<div class="header" style="margin: 3%;">
 				<div class="row" style="padding-top: 2%;">
 					<div class="col-xs-3 " padding-right="10%" height="10%">
 						<br>
-						<img src="../../bootstrap/img/Walchand_11.gif" class="img-responsive" alt="Responsive Image" align="right"  />
+						<img src="../../bootstrap/img/Walchand_11.gif" class="img-responsive pooimg" alt="Responsive Image" align="right"  />
 					</div>
-					<div class="col-xs-9 ">
+					<div class="col-xs-9 poo">
 						<h1 style="text-align: left;">Walchand College of Engineering, Sangli.</h1>
 						<h5 style="text-align: right; padding-right: 30%; font-weight: bold; font-style: italic;">(An autonomous institute.)</h5>
 						<h3 style="padding-left: 5%; font-weight: bold;">Department of Computer Science and Engineering.</h3>
@@ -798,7 +819,7 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 				</div>
 			</div>
 		<!--</div>	-->
-
+		
 		<div class="row">
 			<div class="col-md-12 col-xs-12">
 				<div class="col-md-1 col-xs-0"></div>
@@ -816,7 +837,7 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 													<div class="col-xs-4"><button type="button" class="btn btn-default btn-md" 	style="float: right;"><a href="../../Forms/Form1/">Edit</a></button>
 													</div>
 												</div><br>
-
+												
 												<caption><strong>Basic Details</strong></caption>
 												<table class="table">
 														<tr>
@@ -862,82 +883,6 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 
 												</table>
 
-
-
-												<!--111111
-												<div class="col-xs-6">
-													<div class="panel panel-primary">
-
-														<div class="well" style="margin: 2%; font-weight: uppercase;">
-															<h3><span style="margin-top: 1%;" class="label label-default md">Welcome <?php echo "$title $fullname"; ?></span></h3> 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Gender -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong></strong></h5></div>
-															</div>
-
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of father and husband -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong></strong></h5></div>
-															</div>
-
-
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Mother's Name -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong></strong></h5></div>
-															</div>
-
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Academic Position -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong></strong></h5></div>
-															</div>
-
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Date of Birth -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong></strong></h5></div>
-															</div>
-
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Highest Qualification -</strong></h5 style="color: #663300;"></div>
-																<div class="col-xs-6"><h5><strong></strong></h5></div>
-															</div>
-															<br>
-															<br>
-															
-														</div>
-													</div>
-												</div>
-												<div class="col-xs-6">
-													<!-- <div class="row" id="photo">
-														<div class="panel panel-info"></div>
-													</div> --><!--
-													<div class="row">
-														<div class="panel panel-primary">
-															<div class="well" style="margin: 2%; font-weight: uppercase;">
-															
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Highest Qualification (Other) -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong></strong></h5></div>
-															</div>
-
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Status of Highest Qualification -</strong</h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong></strong></h5></div>
-															</div>
-
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Type of Appointment -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong></strong></h5></div>
-															</div>
-
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Wing of Appointment -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong></strong></h5></div>
-															</div>
-														</div>
-														</div>
-													</div>
-												</div>
-												11111-->
 											</div>
 											
 											<div class="panel-footer">
@@ -946,11 +891,9 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 									
 							</div>
 
-						</div>
-	
-						<div class="row" align="center" style="padding-top: 1%;" id="edudet">
+							<div class="col-md-1"></div>
 
-							<div class="col-xs-12" style="margin-left: 1%" align="left">
+							<div class="col-md-12 col-xs-12" style="margin-left: 1%" align="left">
 										<div class="panel panel-primary">
 											<div class="panel-heading"><h3>Educational Details</h3></div>
 											
@@ -969,132 +912,110 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 													</div>
 													
 												</div><hr><br><br><br>
-
 												<div class="col-xs-12 collapse" id="demo3">
-													<!--Copy code below -->
-													<div class="col-xs-6">
-													<div class="panel panel-primary">
-														<div class="well" style="margin: 2%; font-weight: uppercase;">
-															<h3><span style="margin-top: 1%;" class="label label-default md">Educational Details of <?php echo "$title $fullname"; ?></span></h3> 
-															
+												<table class="table">
 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of Diploma college -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nodc"; ?></strong></h5></div>
-															</div>
+													<tr>
+														<th>Name of Diploma college</th>
+														<td><?php echo "$nodc"; ?></td>
+													</tr>
+													
+													<tr>
+														<th>Name of Diploma Discipline </th>
+														<td><?php echo "$dipdiscipline"; ?></td>
+													</tr>
 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of Diploma Discipline -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$dipdiscipline"; ?></strong></h5></div>
-															</div>
+													<tr>
+														<th>Percentage of Diploma</th>
+														<td><?php echo "$dippercentage"; ?></td>
+													</tr>
 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Percentage of Diploma -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$dippercentage"; ?></strong></h5></div>
-															</div>
+													<tr>
+														<th>Diploma Completed Date</th>
+														<td><?php echo "$dipdate"; ?></td>
+													</tr>
 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Diploma Completed Date -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$dipdate"; ?></strong></h5></div>
-															</div>
+													<tr>
+														<th>Graduation</th>
+														<td><?php echo "$graduation"; ?></td>
+													</tr>
 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Graduation  -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$graduation"; ?></strong></h5></div>
-															</div>
+													<tr>
+														<th>Graduation (Other)</th>
+														<td><?php echo "$gradother"; ?></td>
+													</tr>
 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Graduation (Other) -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$gradother"; ?></strong></h5></div>
-															</div>
+													<tr>
+														<th>Graduated Discipline</th>
+														<td><?php echo "$graddiscipline"; ?></td>
+													</tr>
 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Graduated Discipline -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$graddiscipline"; ?></strong></h5></div>
-															</div>
+													<tr>
+														<th>Name of Graduated College</th>
+														<td><?php echo "$nogc"; ?></td>
+													</tr>
 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of Graduated College  -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nogc"; ?></strong></h5></div>
-															</div>
+													<tr>
+														<th>Date of Graduation</th>
+														<td><?php echo "$graddate"; ?></td>
+													</tr>
 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Date of Graduation -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$graddate"; ?></strong></h5></div>
-															</div>
+													<tr>
+														<th>Percentage of Graduation</th>
+														<td><?php echo "$gradpercentage"; ?></td>
+													</tr>
 
-															<br>
-															<br>
-															
-														</div>
-													</div>
-												</div>
-												<div class="col-xs-6">
-													<div class="panel panel-primary">
-														<div class="well" style="margin: 2%; font-weight: uppercase;">
-															 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Percentage of Graduation -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$gradpercentage"; ?></strong></h5></div>
-															</div>
+													<tr>
+														<th>Post Graduation</th>
+														<td><?php echo "$postgraduation"; ?></td>
+													</tr>
 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Post Graduation -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$postgraduation"; ?></strong></h5></div>
-															</div>
+													<tr>
+														<th>Post Graduation (Info)</th>
+														<td><?php echo "$postgradother"; ?></td>
+													</tr>
 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Post Graduation (Info) -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$postgradother"; ?></strong></h5></div>
-															</div>
+													<tr>
+														<th>Post-Graduated Discipline</th>
+														<td><?php echo "$postgraddiscipline"; ?></td>
+													</tr>
 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Post-Graduated Discipline -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$postgraddiscipline"; ?></strong></h5></div>
-															</div>
+													<tr>
+														<th>Post-Graduated College</th>
+														<td><?php echo "$nopgc"; ?></td>
+													</tr>
 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Post-Graduated College -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nopgc"; ?></strong></h5></div>
-															</div>
+													<tr>
+														<th>Date of Post Graduation</th>
+														<td><?php echo "$postgraddate"; ?></td>
+													</tr>
 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Date of Post Graduation -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$postgraddate"; ?></strong></h5></div>
-															</div>
+													<tr>
+														<th>Percentage of Post-Graduation</th>
+														<td><?php echo "$postgradpercentage"; ?></td>
+													</tr>
 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Percentage of Post-Graduation -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$postgradpercentage"; ?></strong></h5></div>
-															</div>
+													<tr>
+														<th>Doctoral Degree</th>
+														<td><?php echo "$docdegree"; ?></td>
+													</tr>
 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Doctoral Degree -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$docdegree"; ?></strong></h5></div>
-															</div>
+													<tr>
+														<th>Area of Research</th>
+														<td><?php echo "$area1"; ?></td>
+													</tr>
 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Area of Research -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$area1"; ?></strong></h5></div>
-															</div>
+													<tr>
+														<th>Name of College Where Ph.D. Registered</th>
+														<td><?php echo "$nophdc"; ?></td>
+													</tr>
 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of College Where Ph.D. Registered -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nophdc"; ?></strong></h5></div>
-															</div>
-
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Doctoral Degree Award Date -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$docdate"; ?></strong></h5></div>
-															</div>
-
-															<br>
-															<br>
-															
-														</div>
-													</div>
-												</div>
-												</div>
+													<tr>
+														<th>Doctoral Degree Award Date</th>
+														<td><?php echo "$docdate"; ?></td>
+													</tr>
+												</table>
+											</div>
 
 											</div>
 											
@@ -1189,88 +1110,7 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 
 
 
-											<!--<div class="panel-body">
-
-												<div class="row">
-													<div class="col-xs-9"></div>
-													<div class="col-xs-3">
-													<button data-toggle="collapse" class="btn btn-info" data-target="#demo1">Collapsible</button>	
-													<button type="button" class="btn btn-default btn-md" style="float: right;"><a href="../../Forms/Form4/">Edit</a></button>
-													</div>
-												</div><br><br><br>
-
-												<div class="col-xs-12 collapse" id="demo1" >
-
-												<div class="col-xs-6">
-													<div class="panel panel-primary">
-														<div class="well" style="margin: 2%; font-weight: uppercase;">
-															<h3><span style="margin-top: 1%;" class="label label-default md">Books published by  <?php echo "$title $fullname"; ?></span></h3> 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Author from -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$authorfrom"; ?></strong></h5></div>
-															</div>
-
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Department -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$department"; ?></strong></h5></div>
-															</div>
-
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of First Author -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$authorname"; ?></strong></h5></div>
-															</div>
-
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of Co-Authors -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$coauthorname"; ?></strong></h5></div>
-															</div>
-
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Title of Book -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$bookname"; ?></strong></h5></div>
-															</div>
-
-															<br>
-															<br>
-															
-														</div>
-													</div>
-												</div>
-												<div class="col-xs-6">
-													<div class="panel panel-primary">
-														<div class="well" style="margin: 2%; font-weight: uppercase;">
-															 
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Date of Book Publication -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$dobp"; ?></strong></h5></div>
-															</div>
-
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Edition of Book -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$editionofbook"; ?></strong></h5></div>
-															</div>
-
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>ISBN Number of Book -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$isbn"; ?></strong></h5></div>
-															</div>
-
-															<div class="row">
-																<div class="col-xs-6"><h5 style="color: purple;"><strong>Abstract/Content of Book -</strong></h5></div>
-																<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$content"; ?></strong></h5></div>
-															</div>
-
-										
-
-															<br><br><br>
-															<br>
-															
-														</div>
-													</div>
-												</div>
-												</div>
-											</div>
-											-->
+											
 											<div class="panel-footer">
 											</div>
 										</div>
@@ -1302,141 +1142,99 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 												</div><hr><br>
 												<br>
 												<br>
+											<div class="col-xs-12 collapse" id="demo2">
+												 <h3><span style="margin-top: 1%;" class="label label-default md">Event organised by  <?php echo "$title $fullname"; ?></span></h3>
+												<table class="table">
+													<tr>
+														<th>Event Coordinator From</th>
+														<td><?php echo "$eventcoordinatorfrom"; ?></td>
+													</tr>
+													<tr>
+														<th>Department</th>
+														<td><?php echo "$department2"; ?></td>
+													</tr>
+													<tr>
+														<th>Type of Event</th>
+														<td><?php echo "$typeofevent"; ?></td>
+													</tr>
+													<tr>
+														<th>Duration of Event</th>
+														<td><?php echo "$duration"; ?></td>
+													</tr>
+													<tr>
+														<th>Name of Coordinator</th>
+														<td><?php echo "$coordinatorname"; ?></td>
+													</tr>
+													<tr>
+														<th>Name of Co-Coordinator</th>
+														<td><?php echo "$cocoordinatorname"; ?></td>
+													</tr>
+													<tr>
+														<th>Starting Date of Event</th>
+														<td><?php echo "$dos"; ?></td>
+													</tr>
+													<tr>
+														<th>End Date of Event</th>
+														<td><?php echo "$doe"; ?></td>
+													</tr>
+													<tr>
+														<th>Title of Event</th>
+														<td><?php echo "$toe"; ?></td>
+													</tr>
+													<tr>
+														<th>Name of Resourse Person1</th>
+														<td><?php echo "$nameofresource1"; ?></td>
+													</tr>
+													<tr>
+														<th>Name of Resourse Person2</th>
+														<td><?php echo "$nameofresource2"; ?></td>
+													</tr>
+													<tr>
+														<th>Name of Resourse Person 3</th>
+														<td><?php echo "$nameofresource3"; ?></td>
+													</tr>
+													<tr>
+														<th>Name of Resourse Person 4</th>
+														<td><?php echo "$nameofresource4"; ?></td>
+													</tr>
+													<tr>
+														<th>Details of Event</th>
+														<td><?php echo "$details"; ?></td>
+													</tr>
+													<tr>
+														<th>Total Number of Participant</th>
+														<td><?php echo "$totalparticipants"; ?></td>
+													</tr>
+													<tr>
+														<th>Total Number of WCE Participant</th>
+														<td><?php echo "$wceparticipants"; ?></td>
+													</tr>
+													<tr>
+														<th>Total Number of Non-WCE Participant</th>
+														<td><?php echo "$nonwceparticipants"; ?></td>
+													</tr>
+													<tr>
+														<th>Total Expenditure of Event (In Lakhs)</th>
+														<td><?php echo "$expenditure"; ?></td>
+													</tr>
+													<tr>
+														<th>Expenditure Through</th>
+														<td><?php echo "$expenditurethrough"; ?></td>
+													</tr>
+													<tr>
+														<th>If other, Please Specify</th>
+														<td><?php echo "$otherthing"; ?></td>
+													</tr>
+													<tr>
+														<th>Total IRG Generated (In Lakhs)</th>
+														<td><?php echo "$irg"; ?></td>
+													</tr>
 
-										
-		
-
-												<div class="col-xs-12 collapse" id="demo2">
-														<div class="col-xs-6">
-
-															<div class="panel panel-primary">
-																<div class="well" style="margin: 2%; font-weight: uppercase;">
-																	 <h3><span style="margin-top: 1%;" class="label label-default md">Event organised by  <?php echo "$title $fullname"; ?></span></h3>
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Event Coordinator From  </strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$eventcoordinatorfrom"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Department -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$department2"; ?></strong></h5></div>
-																	</div>
-
-																	
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Type of Event -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$typeofevent"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Duration of Event -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$duration"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of Coordinator -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$coordinatorname"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of Co-Coordinator -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$cocoordinatorname"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Starting Date of Event -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$dos"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>End Date of Event -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$doe"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Title of Event -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$toe"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of Resourse Person1 -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nameofresource1"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of Resourse Person2 -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nameofresource2"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of Resourse Person 3 -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nameofresource3"; ?></strong></h5></div>
-																	</div>
-
-																	<br>
-																	<br>
-																	
-																</div>
-															</div>
-														</div>
-														<div class="col-xs-6">
-															<div class="panel panel-primary">
-																<div class="well" style="margin: 2%; font-weight: uppercase;">
-																	 
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of Resourse Person 4 -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nameofresource4"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Details of Event -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$details"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Total Number of Participant -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$totalparticipants"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Total Number of WCE Participant -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$wceparticipants"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Total Number of Non-WCE Participant -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nonwceparticipants"; ?></strong></h5></div>
-																	</div>
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Total Expenditure of Event (In Lakhs) -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$expenditure"; ?></strong></h5></div>
-																	</div>
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Expenditure Through -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$expenditurethrough"; ?></strong></h5></div>
-																	</div>
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>If other, Please Specify -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$otherthing"; ?></strong></h5></div>
-																	</div>
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Total IRG Generated (In Lakhs) -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$irg"; ?></strong></h5></div>
-																	</div>
-																	
-
-
-
-																	<br>
-																	<br>
-																	
-																</div>
-															</div>
-														</div>
-													</div>
+												</table>
+											</div>
 
 											</div>
+										
 										
 											<div class="panel-footer">
 											</div>
@@ -1468,77 +1266,48 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 													</div>
 
 												</div><hr><br><br><br>
-
-												<div class="col-xs-12 collapse" id="demo4">
-														<div class="col-xs-6">
-
-															<div class="panel panel-primary">
-																<div class="well" style="margin: 2%; font-weight: uppercase;">
-																	 <h3><span style="margin-top: 1%;" class="label label-default md">Guest Lectures by <?php echo "$title $fullname"; ?></span></h3>
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Faculty From -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$facultyfrom"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Department -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$department1"; ?></strong></h5></div>
-																	</div>
-
-																	
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of Organization -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nameoforganization"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Place -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$place"; ?></strong></h5></div>
-																	</div>
-
-																	<br>
-																	<br>
-																	
-																</div>
-															</div>
-														</div>
-														<div class="col-xs-6">
-															<div class="panel panel-primary">
-																<div class="well" style="margin: 2%; font-weight: uppercase;">
-																	 
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Type of Lecture -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$typeoflecture"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Title of Lecture -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$titleoflecture"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Duration of Lecture -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$durationoflecture"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Starting Date of the Lecture -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$dol"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Number of Students Attended Lecture -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$numberofstudents"; ?></strong></h5></div>
-																	</div>
-
-																	<br>
-																	<br>
-																	
-																</div>
-															</div>
-														</div>
-													</div>
+											<div class="col-xs-12 collapse" id="demo4">
+												 <h3><span style="margin-top: 1%;" class="label label-default md">Guest Lectures by <?php echo "$title $fullname"; ?></span></h3>
+												<table class="table">
+													<tr>
+														<th>Faculty From</th>
+														<td><?php echo "$facultyfrom"; ?></td>
+													</tr>
+													<tr>
+														<th>Department</th>
+														<td><?php echo "$department1"; ?></td>
+													</tr>
+													<tr>
+														<th>Name of Organization</th>
+														<td><?php echo "$nameoforganization"; ?></td>
+													</tr>
+													<tr>
+														<th>Place</th>
+														<td><?php echo "$place"; ?></td>
+													</tr>
+													<tr>
+														<th>Type of Lecture</th>
+														<td><?php echo "$typeoflecture"; ?></td>
+													</tr>
+													<tr>
+														<th>Title of Lecture</th>
+														<td><?php echo "$titleoflecture"; ?></td>
+													</tr>
+													<tr>
+														<th>Duration of Lecture</th>
+														<td><?php echo "$durationoflecture"; ?></td>
+													</tr>
+													<tr>
+														<th>Starting Date of the Lecture</th>
+														<td><?php echo "$dol"; ?></td>
+													</tr>
+													<tr>
+														<th>Number of Students Attended Lecture</th>
+														<td><?php echo "$numberofstudents"; ?></td>
+													</tr>
+												</table>
+											</div>
+												
 											</div>
 											
 											<div class="panel-footer">
@@ -1569,92 +1338,60 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 													<button type="button" class="btn btn-default btn-md" style="float: right;">Add Lecture Org Info</button></a>
 													</div>
 												</div><hr><br><br><br>
-									
-
-												<div class="col-xs-12 collapse" id="demo5">
-														<div class="col-xs-6">
-
-															<div class="panel panel-primary">
-																<div class="well" style="margin: 2%; font-weight: uppercase;">
-																	 <h3><span style="margin-top: 1%;" class="label label-default md">Guest Lecture by  <?php echo "$title $fullname"; ?></span></h3>
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Faculty From -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$facultyfrom1"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Department -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$department3"; ?></strong></h5></div>
-																	</div>
-
-																	
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of the faculty -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nameofthefaculty1"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of Resource Person -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nameofresourceperson"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of Organization -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$organization1"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Place -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$place1"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Title of Lecture -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$titleoflecture"; ?></strong></h5></div>
-																	</div>
-
-																	<br>
-																	<br>
-																	
-																</div>
-															</div>
-														</div>
-														<div class="col-xs-6">
-															<div class="panel panel-primary">
-																<div class="well" style="margin: 2%; font-weight: uppercase;">
-																	 
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Starting Date and Time of Lecture </strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$startdate $starttime"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>End Date and Time of Lecture -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$enddate $endtime"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Number of Students Attended Lecture-</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$numberofstudents"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Total Expenditure -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$totalexpenditure"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Expenditure Through -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$expthrough"; ?></strong></h5></div>
-																	</div>
-
-																	<br>
-																	<br>
-																	
-																</div>
-															</div>
-														</div>
-													</div>
+											<div class="col-xs-12 collapse" id="demo5">
+												 <h3><span style="margin-top: 1%;" class="label label-default md">Guest Lecture by  <?php echo "$title $fullname"; ?></span></h3>
+												<table class="table">
+													<tr>
+														<th>Faculty From</th>
+														<td><?php echo "$facultyfrom1"; ?></td>
+													</tr>
+													<tr>
+														<th>Department</th>
+														<td><?php echo "$department3"; ?></td>
+													</tr>
+													<tr>
+														<th>Name of the faculty</th>
+														<td><?php echo "$nameofthefaculty1"; ?></td>
+													</tr>
+													<tr>
+														<th>Name of Resource Person</th>
+														<td><?php echo "$nameofresourceperson"; ?></td>
+													</tr>
+													<tr>
+														<th>Name of Organization</th>
+														<td><?php echo "$organization1"; ?></td>
+													</tr>
+													<tr>
+														<th>Place</th>
+														<td><?php echo "$place1"; ?></td>
+													</tr>
+													<tr>
+														<th>Title of Lecture</th>
+														<td><?php echo "$titleoflecture"; ?></td>
+													</tr>
+													<tr>
+														<th>Starting Date and Time of Lecture</th>
+														<td><?php echo "$startdate $starttime"; ?></td>
+													</tr>
+													<tr>
+														<th>End Date and Time of Lecture</th>
+														<td><?php echo "$enddate $endtime"; ?></td>
+													</tr>
+													<tr>
+														<th>Number of Students Attended Lecture</th>
+														<td><?php echo "$numberofstudents"; ?></td>
+													</tr>
+													<tr>
+														<th>Total Expenditure</th>
+														<td><?php echo "$totalexpenditure"; ?></td>
+													</tr>
+													<tr>
+														<th>Expenditure Through</th>
+														<td><?php echo "$expthrough"; ?></td>
+													</tr>
+												</table>
+											</div>
+												
 
 											</div>
 											
@@ -1689,85 +1426,57 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 													</div>
 													
 												</div><hr><br><br><br>
+											<div class="col-xs-12 collapse" id="demo6">
+												<h3><span style="margin-top: 1%;" class="label label-default md">Infrastructural Development by  <?php echo "$title $fullname"; ?></span></h3>
+												<table class="table">
+													<tr>
+														<th>Infrastructural Development in Wing</th>
+														<td><?php echo "$wing1"; ?></td>
+													</tr>
+													<tr>
+														<th>Department</th>
+														<td><?php echo "$department5"; ?></td>
+													</tr>
+													<tr>
+														<th>Other</th>
+														<td><?php echo "$other1"; ?></td>
+													</tr>
+													<tr>
+														<th>Name of Faculty (Under the guidance work carried)</th>
+														<td><?php echo "$nof1"; ?></td>
+													</tr>
+													<tr>
+														<th>Type of Development</th>
+														<td><?php echo "$tod1"; ?></td>
+													</tr>
+													<tr>
+														<th>Other</th>
+														<td><?php echo "$other2"; ?></td>
+													</tr>
+													<tr>
+														<th>Total Purchased Quantity</th>
+														<td><?php echo "$quantity1"; ?></td>
+													</tr>
+													<tr>
+														<th>Purcahsed Through</th>
+														<td><?php echo "$purchased1"; ?></td>
+													</tr>
+													<tr>
+														<th>Specification of Product</th>
+														<td><?php echo "$specification1"; ?></td>
+													</tr>
+													<tr>
+														<th>Total Expenditure (In Lakhs)</th>
+														<td><?php echo "$expenditure1"; ?></td>
+													</tr>
+													<tr>
+														<th>Date of Purchase</th>
+														<td><?php echo "$dop1"; ?></td>
+													</tr>
+												</table>
+											</div>
 
-												<div class="col-xs-12 collapse" id="demo6">
-														<div class="col-xs-6">
-
-															<div class="panel panel-primary">
-																<div class="well" style="margin: 2%; font-weight: uppercase;">
-																	 <h3><span style="margin-top: 1%;" class="label label-default md">Infrastructural Development by  <?php echo "$title $fullname"; ?></span></h3>
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Infrastructural Development in Wing -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$wing1"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Department -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$department5"; ?></strong></h5></div>
-																	</div>
-
-																	
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Other -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$other1"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of Faculty (Under the guidance work carried) -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nof1"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Type of Development -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$tod1"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Other -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$other2"; ?></strong></h5></div>
-																	</div>
-																	<br>
-																	<br>
-																	
-																</div>
-															</div>
-														</div>
-														<div class="col-xs-6">
-															<div class="panel panel-primary">
-																<div class="well" style="margin: 2%; font-weight: uppercase;">
-																	 
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Total Purchased Quantity </strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$quantity1"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Purcahsed Through -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$purchased1"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Specification of Product </strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$specification1"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Total Expenditure (In Lakhs) -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$expenditure1"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Date of Purchase -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$dop1"; ?></strong></h5></div>
-																	</div>
-
-																	<br>
-																	<br>
-																	
-																</div>
-															</div>
-														</div>
-													</div>
+												
 									
 											</div>
 											
@@ -1803,86 +1512,56 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 													</div>
 													
 												</div><hr><br><br><br>
-
-												<div class="col-xs-12 collapse" id="demo8">
-														<div class="col-xs-6">
-
-															<div class="panel panel-primary">
-																<div class="well" style="margin: 2%; font-weight: uppercase;">
-																	 <h3><span style="margin-top: 1%;" class="label label-default md">Patents by  <?php echo "$title $fullname"; ?></span></h3>
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Faculty/Student From -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$facultyfrom3"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Department -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$department7"; ?></strong></h5></div>
-																	</div>
-
-																	
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Type of Patent -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$typeofpatent"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Status of Patent -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$statusofpatent"; ?></strong></h5></div>
-																	</div>
-
-																	<br><br><br>
-																	<br>
-																	<br>
-																	
-																</div>
-															</div>
-														</div>
-														<div class="col-xs-6">
-															<div class="panel panel-primary">
-																<div class="well" style="margin: 2%; font-weight: uppercase;">
-																	 
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of First Author/Filed by - </strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nameoffirstauthor"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of Co-Authors/Filed by -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nameofcoauthor"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Title of Patent -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$title1"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Date Of Patent Filed - </strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$dateofpatentfiled"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Date Of Patent Awardwed - </strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$dateofpatentawarded"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Patent Number -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$patentnumber"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Details of Patent -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$detailsofpatent"; ?></strong></h5></div>
-																	</div>
-
-																	
-																</div>
-															</div>
-														</div>
-													</div>											
+											<div class="col-xs-12 collapse" id="demo8">
+												<h3><span style="margin-top: 1%;" class="label label-default md">Patents by  <?php echo "$title $fullname"; ?></span></h3>
+												<table class="table">
+													<tr>
+														<th>Faculty/Student From</th>
+														<td><?php echo "$facultyfrom3"; ?></td>
+													</tr>
+													<tr>
+														<th>Department</th>
+														<td><?php echo "$department7"; ?></td>
+													</tr>
+													<tr>
+														<th>Type of Patent</th>
+														<td><?php echo "$typeofpatent"; ?></td>
+													</tr>
+													<tr>
+														<th>Status of Patent</th>
+														<td><?php echo "$statusofpatent"; ?></td>
+													</tr>
+													<tr>
+														<th>Name of First Author/Filed by</th>
+														<td><?php echo "$nameoffirstauthor"; ?></td>
+													</tr>
+													<tr>
+														<th>Name of Co-Authors/Filed by</th>
+														<td><?php echo "$nameofcoauthor"; ?></td>
+													</tr>
+													<tr>
+														<th>Title of Patent</th>
+														<td><?php echo "$title1"; ?></td>
+													</tr>
+													<tr>
+														<th>Date Of Patent Filed</th>
+														<td><?php echo "$dateofpatentfiled"; ?></td>
+													</tr>
+													<tr>
+														<th>Date Of Patent Awardwed</th>
+														<td><?php echo "$dateofpatentawarded"; ?></td>
+													</tr>
+													<tr>
+														<th>Patent Number</th>
+														<td><?php echo "$patentnumber"; ?></td>
+													</tr>
+													<tr>
+														<th>Details of Patent</th>
+														<td><?php echo "$detailsofpatent"; ?></td>
+													</tr>
+												</table>
 											</div>
+																							</div>
 											
 											<div class="panel-footer">
 											</div>
@@ -1915,131 +1594,86 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 													</div>
 													
 												</div><hr><br><br><br>
+											<div class="col-xs-12 collapse" id="demo9">
+												 <h3><span style="margin-top: 1%;" class="label label-default md">Project Grants Received </span></h3>
+												<table class="table">
+													<tr>
+														<th>Principal Investigator From</th>
+														<td><?php echo "$investigatorfrom"; ?></td>
+													</tr>
+													<tr>
+														<th>Department</th>
+														<td><?php echo "$department8"; ?></td>
+													</tr>
+													<tr>
+														<th>Name of Funding Agency</th>
+														<td><?php echo "$nameofagency"; ?></td>
+													</tr>
+													<tr>
+														<th>If Other Funding Agency, Please Specify Name</th>
+														<td><?php echo "$otherfundingagency"; ?></td>
+													</tr>
+													<tr>
+														<th>Status of Project</th>
+														<td><?php echo "$statusofproject"; ?></td>
+													</tr>
+													<tr>
+														<th>Name of Principal Investigator</th>
+														<td><?php echo "$nameofprincipalinvestigator"; ?></td>
+													</tr>
+													<tr>
+														<th>Name of Co-Investigator</th>
+														<td><?php echo "$nameofcoinvestigator"; ?></td>
+													</tr>
+													<tr>
+														<th>Title of Project</th>
+														<td><?php echo "$titleofproject"; ?></td>
+													</tr>
+													<tr>
+														<th>Total Amount Santioned for Project (In Lakhs)</th>
+														<td><?php echo "$amountsantioned"; ?></td>
+													</tr>
+													<tr>
+														<th>Date of Project Santioned</th>
+														<td><?php echo "$dateofprojectsantioned"; ?></td>
+													</tr>
+													<tr>
+														<th>Date of Project Completed (If Completed)</th>
+														<td><?php echo "$dateofprojectcompleted"; ?></td>
+													</tr>
+													<tr>
+														<th>Project Abstract</th>
+														<td><?php echo "$projectabstract"; ?></td>
+													</tr>
+													<tr>
+														<th>Equipment Details Purchased Under Project Grant</th>
+														<td><?php echo "$equipmentdetails"; ?></td>
+													</tr>
+													<tr>
+														<th>Revenue Generated Through Project(In Lakhs, If Any)</th>
+														<td><?php echo "$totalrevenue"; ?></td>
+													</tr>
+													<tr>
+														<th>Total Papers Published Related to Project Grants</th>
+														<td><?php echo "$totalpaperspublished"; ?></td>
+													</tr>
+													<tr>
+														<th>Number of B.Tech. Students Completed Dissertation</th>
+														<td><?php echo "$btechstudents"; ?></td>
+													</tr>
+													<tr>
+														<th>Number of M.Tech. Students Completed Dissertation</th>
+														<td><?php echo "$mtechstudents"; ?></td>
+													</tr>
+													<tr>
+														<th>Number of Ph.D. Students Completed Dissertation</th>
+														<td><?php echo "$phdstudents"; ?></td>
+													</tr>
+												</table>
+											</div>
 
 
-
-												<div class="col-xs-12 collapse" id="demo9">
-														<div class="col-xs-6">
-
-															<div class="panel panel-primary">
-																<div class="well" style="margin: 2%; font-weight: uppercase;">
-																	 <h3><span style="margin-top: 1%;" class="label label-default md">Project Grants Received </span></h3>
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Principal Investigator From -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$investigatorfrom"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Department -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$department8"; ?></strong></h5></div>
-																	</div>
-
-																	
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of Funding Agency -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nameofagency"; ?></strong></h5></div>
-																	</div>
-
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>If Other Funding Agency, Please Specify Name -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$otherfundingagency"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Status of Project -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$statusofproject"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of Principal Investigator -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nameofprincipalinvestigator"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of Co-Investigator -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nameofcoinvestigator"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Title of Project -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$titleofproject"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Total Amount Santioned for Project (In Lakhs) -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$amountsantioned"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Date of Project Santioned </strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$dateofprojectsantioned"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Date of Project Completed (If Completed) -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$dateofprojectcompleted"; ?></strong></h5></div>
-																	</div>
-
-
-
-																	<br>
-																	<br>
-																	
-																</div>
-															</div>
-														</div>
-														<div class="col-xs-6">
-															<div class="panel panel-primary">
-																<div class="well" style="margin: 2%; font-weight: uppercase;">
-																	 
-																	
-
-																		<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Project Abstract -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$projectabstract"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Equipment Details Purchased Under Project Grant -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$equipmentdetails"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Revenue Generated Through Project(In Lakhs, If Any) -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$totalrevenue"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Total Papers Published Related to Project Grants -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$totalpaperspublished"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Number of B.Tech. Students Completed Dissertation -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$btechstudents"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Number of M.Tech. Students Completed Dissertation -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$mtechstudents"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Number of Ph.D. Students Completed Dissertation -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$phdstudents"; ?></strong></h5></div>
-																	</div>
-
-
-
-
-																	<br><br>
-																	<br>
-																	
-																</div>
-															</div>
-														</div>
-												</div>
+												
 
 											
 											</div>
@@ -2072,68 +1706,42 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 													</div>
 													
 												</div><hr><br><br><br>
+											<div class="col-xs-12 collapse" id="demo10">
+												 <h3><span style="margin-top: 1%;" class="label label-default md">(MoU) with <?php echo "$facultyfrom5 $department6"; ?></span></h3>
+												<table class="table">
+													<tr>
+														<th>Type of MoU or MoU with</th>
+														<td><?php echo "$typeofmou"; ?></td>
+													</tr>
+													<tr>
+														<th>Faculty Coordinator from</th>
+														<td><?php echo "$facultyfrom5"; ?></td>
+													</tr>
+													<tr>
+														<th>Department</th>
+														<td><?php echo "$department6"; ?></td>
+													</tr>
+													<tr>
+														<th>Name of Place</th>
+														<td><?php echo "$nameofindustry"; ?></td>
+													</tr>
+													<tr>
+														<th>Date of MoU</th>
+														<td><?php echo "$moudate"; ?></td>
+													</tr>
+													<tr>
+														<th>Purpose of MoU</th>
+														<td><?php echo "$purposeofmou"; ?></td>
+													</tr>
+													<tr>
+														<th>Details of MoU</th>
+														<td><?php echo "$detailsofmou"; ?></td>
+													</tr>
+												</table>
+											</div>
 
 
-
-												<div class="col-xs-12 collapse" id="demo10">
-														<div class="col-xs-6">
-
-															<div class="panel panel-primary">
-																<div class="well" style="margin: 2%; font-weight: uppercase;">
-																	 <h3><span style="margin-top: 1%;" class="label label-default md">(MoU) with <?php echo "$facultyfrom5 $department6"; ?></span></h3>
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Type of MoU or MoU with -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$typeofmou"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Faculty Coordinator from -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$facultyfrom5"; ?></strong></h5></div>
-																	</div>
-
-																	
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Department -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$department6"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of Place -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nameofindustry"; ?></strong></h5></div>
-																	</div>
-
-																	<br>
-																	<br>
-																	
-																</div>
-															</div>
-														</div>
-														<div class="col-xs-6">
-															<div class="panel panel-default">
-																<div class="well" style="margin: 2%; font-weight: uppercase;">
-																	 
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Date of MoU -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$moudate"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Purpose of MoU -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$purposeofmou"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Details of MoU -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$detailsofmou"; ?></strong></h5></div>
-																	</div>
-
-																	<br>
-																	<br>
-																	
-																</div>
-															</div>
-														</div>
-												</div>												
+																								
 											</div>
 											
 											<div class="panel-footer">
@@ -2163,73 +1771,46 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 													</div>
 													
 												</div><hr><br><br><br>
+											<div class="col-xs-12 collapse" id="demo12">
+												<h3><span style="margin-top: 1%;" class="label label-default md">Foreign Travels by  <?php echo "$title $fullname"; ?></span></h3>
+												<table class="table">
+													<tr>
+														<th>Faculty From</th>
+														<td><?php echo "$facultyfrom2"; ?></td>
+													</tr>
+													<tr>
+														<th>Department</th>
+														<td><?php echo "$department4"; ?></td>
+													</tr>
+													<tr>
+														<th>Purpose of Visit</th>
+														<td><?php echo "$pov"; ?></td>
+													</tr>
+													<tr>
+														<th>Name of the faculty</th>
+														<td><?php echo "$nof"; ?></td>
+													</tr>
+													<tr>
+														<th>Details of Event</th>
+														<td><?php echo "$details1"; ?></td>
+													</tr>
+													<tr>
+														<th>Total Expenditure of Visit</th>
+														<td><?php echo "$eov"; ?></td>
+													</tr>
+													<tr>
+														<th>Visit Sponsored Under</th>
+														<td><?php echo "$sponsor"; ?></td>
+													</tr>
+													<tr>
+														<th>If other, Please Mention</th>
+														<td><?php echo "$othera"; ?></td>
+													</tr>
 
+												</table>
+											</div>
 
-												<div class="col-xs-12 collapse" id="demo12">
-														<div class="col-xs-6">
-
-															<div class="panel panel-primary">
-																<div class="well" style="margin: 2%; font-weight: uppercase;">
-																	 <h3><span style="margin-top: 1%;" class="label label-default md">Foreign Travels by  <?php echo "$title $fullname"; ?></span></h3>
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Faculty From -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$facultyfrom2"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Department -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$department4"; ?></strong></h5></div>
-																	</div>
-
-																	
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Purpose of Visit -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$pov"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Name of the faculty -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$nof"; ?></strong></h5></div>
-																	</div>
-
-																	<br>
-																	<br>
-																	
-																</div>
-															</div>
-														</div>
-														<div class="col-xs-6">
-															<div class="panel panel-primary">
-																<div class="well" style="margin: 2%; font-weight: uppercase;">
-																	 
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Details of Event -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$details1"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Total Expenditure of Visit -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$eov"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>Visit Sponsored Under -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$sponsor"; ?></strong></h5></div>
-																	</div>
-
-																	<div class="row">
-																		<div class="col-xs-6"><h5 style="color: purple;"><strong>If other, Please Mention -</strong></h5></div>
-																		<div class="col-xs-6"><h5 style="color: #663300;"><strong><?php echo "$othera"; ?></strong></h5></div>
-																	</div>
-
-																	<br>
-																	<br>
-																	
-																</div>
-															</div>
-														</div>
-													</div>
+												
 											</div>
 											
 											<div class="panel-footer">
@@ -2260,61 +1841,3 @@ if(($query_run1=mysql_query($query1)) && ($query_run2=mysql_query($query2)) && (
 
 		</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-<!--
-
-<div class="row" align="center" style="padding-top: 7%;">
-			<div class="col-xs-10" style="margin-left: 8%">
-					<form action="#" role="form">
-						<div class="panel panel-primary">
-							<div class="panel-heading"><h3>Basic Details</h3></div>
-							
-							<div class="panel-body">
-								
-								<div class="col-xs-6" >
-									<div class="panel panel-default">
-												
-									</div>
-								</div>
-								<div class="col-xs-6" >
-									<div class="panel panel-default">
-										
-									</div>
-								</div>
-							</div>
-							<div class="panel-footer">
-								<button type="button" class="btn btn-default btn-md" value="submit">Submit</button>
-							</div>
-						</div>
-					</form>
-				</div>
-			
-		</div>
-
-
-
-
-
-		<div class="col-xs-2" align="right">
-						<div>
-							<ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="10" role="tablist" align="left">
-								<li class="active"><a href="#">Basic Details</li>
-								<li><a href="#">Educational Details</li>
-								<li><a href="#">Books Published</li>
-								<li><a href="#">Guest Lectures Delivered</a></li>
-								<li><a href="#">Event Organised</a></li>
-								<li><a href="#">Bugs Bunny</a></li>
-							</ul>
-						</div>		
-			</div>
-
--->

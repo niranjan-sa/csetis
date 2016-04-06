@@ -258,6 +258,43 @@ function cleared_input($data) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Educational Details</title>
 	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript">
+			function validateForm(){
+					
+					var dipclgnm=document.forms["myForm"]["nodc"].value;
+
+					var dipdis=document.forms["myForm"]["dipdiscipline"].value;
+					var perdip=document.forms["myForm"]["dippercentage"].value;
+					var gradoth=document.forms["myForm"]["gradother"].value;
+					var gradothdis=document.forms["myForm"]["graddiscipline"].value;
+					var gradclgnm=document.forms["myForm"]["nogc"].value;
+					var pergrad=document.forms["myForm"]["gradpercentage"].value;
+					var pgoth=document.forms["myForm"]["postgradother"].value;
+					var pgothdis=document.forms["myForm"]["postgraddiscipline"].value;
+					var pgclgnm=document.forms["myForm"]["nopgc"].value;
+					var perpg=document.forms["myForm"]["postgradpercentage"].value;
+					var aor=document.forms["myForm"]["area"].value;
+					var phdclgnm=document.forms["myForm"]["nophdc"].value;
+					 var patt=/[0-9]/;
+
+					 	
+					  if (patt.test(dipclgnm) || patt.test(dipdis) || patt.test(gradoth) || patt.test(gradothdis) || patt.test(gradclgnm)
+					  	|| patt.test(pgoth) || patt.test(pgothdis) || patt.test(pgclgnm) || patt.test(aor) || patt.test(phdclgnm))
+					  	 {
+					  	 	//console.log("down here in if");
+	       					 alert("No digits are allowed in name fields");
+	       					 return false;
+	    				}
+
+	    			if(!patt.test(perdip) || !patt.test(pergrad) || !patt.test(perpg))
+	    			{
+	    				//console.log("down here in if sec");
+	    				alert("Only digits are allowed in percentage fields");
+	    				return false;
+
+	    			}
+				}
+				</script>
 </head>
 <body>
 <body>
@@ -281,7 +318,7 @@ function cleared_input($data) {
 
 		<div class="row" align="center" style="padding-top: 7%;">
 			<div class="col-xs-10" style="margin-left: 8%">
-					<form action="index.php" role="form" method="POST">
+					<form action="index.php" role="form"  name="myForm" onSubmit="return validateForm()" method="POST"> 
 						<div class="panel panel-primary">
 							<div class="panel-heading"><h3>Educational Details</h3></div>
 							

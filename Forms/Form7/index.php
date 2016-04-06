@@ -76,6 +76,33 @@ function cleared_input($data) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Guest Lecture Organized by Faculty</title>
 	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript">
+	function validateForm(){
+		var facultynm=document.forms["myForm"]["nameofthefaculty"].value;
+		var orgnm=document.forms["myForm"]["organization"].value;
+		var place=document.forms["myForm"]["place"].value;
+		var tol=document.forms["myForm"]["titleoflecture"].value;
+		var numberofstudents=document.forms["myForm"]["numberofstudents"].value;
+		var totalexpenditure=document.forms["myForm"]["totalexpenditure"].value;
+		var patt1=/[0-9]/;
+		
+
+		if(patt1.test(facultynm) || patt1.test(orgnm) || patt1.test(tol) || patt1.test(place) )
+				{
+					
+					 alert("No digits are allowed in name fields");
+	       					 return false;
+				}
+
+		if(!patt1.test(numberofstudents) || !patt1.test(totalexpenditure) )
+				{
+
+					alert("Only digits allowed in Number fields");
+					return false;
+				}
+
+	}
+	</script>
 </head>
 <body>
 <body>
@@ -99,7 +126,7 @@ function cleared_input($data) {
 
 		<div class="row" align="center" style="padding-top: 7%;">
 			<div class="col-xs-10" style="margin-left: 8%">
-					<form action="index.php" role="form" method="POST">
+					<form action="index.php" role="form" name="myForm" onSubmit="return validateForm()" method="POST">
 						<div class="panel panel-primary">
 							<div class="panel-heading"><h3>Guest Lecture Organized by Faculty</h3></div>
 							

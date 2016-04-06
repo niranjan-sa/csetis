@@ -69,6 +69,33 @@ function cleared_input($data) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Infrastructural Development</title>
 	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript">
+	function validateForm(){
+		var otherdept=document.forms["myForm"]["other1"].value;
+		var facultynm=document.forms["myForm"]["nof"].value;
+		var otherdev=document.forms["myForm"]["other2"].value;
+		var totqty=document.forms["myForm"]["quantity"].value;
+		
+		var totalexpenditure=document.forms["myForm"]["expenditure"].value;
+		var patt1=/[0-9]/;
+		
+
+		if(patt1.test(facultynm) || patt1.test(otherdept) || patt1.test(otherdev)  )
+				{
+					
+					 alert("No digits are allowed in name fields");
+	       					 return false;
+				}
+
+		if(!patt1.test(totqty) || !patt1.test(totalexpenditure) )
+				{
+
+					alert("Only digits allowed in Number fields");
+					return false;
+				}
+
+	}
+	</script>
 </head>
 <body>
 <body>
@@ -92,7 +119,7 @@ function cleared_input($data) {
 
 		<div class="row" align="center" style="padding-top: 7%;">
 			<div class="col-xs-10" style="margin-left: 8%">
-					<form action="index.php" role="form" method="post">
+					<form action="index.php" role="form" name="myForm" onSubmit="return validateForm()" method="post">
 						<div class="panel panel-primary">
 							<div class="panel-heading"><h3>Infrastructural Development</h3></div>
 							

@@ -65,7 +65,7 @@ if(isset($_POST['que']) && isset($_POST['ans'])) {
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Login Page</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
 </head>
 <body>
 	<div class="container-fluid">
@@ -74,7 +74,7 @@ if(isset($_POST['que']) && isset($_POST['ans'])) {
 				<div class="row" style="padding-top: 2%;">
 					<div class="col-xs-3 " padding-right="10%" height="10%">
 						<br>
-						<img src="img/Walchand_11.gif" class="img-responsive" alt="Responsive Image" align="right"  />
+						<img src="../../bootstrap/img/Walchand_11.gif" class="img-responsive" alt="Responsive Image" align="right"  />
 					</div>
 					<div class="col-xs-9 ">
 						<h1 style="text-align: left;">Walchand College of Engineering, Sangli.</h1>
@@ -84,6 +84,7 @@ if(isset($_POST['que']) && isset($_POST['ans'])) {
 					</div>	
 				</div>
 			</div>
+			<hr>
 		<!--</div>-->	
 
 		<div class="row" align="center" style="padding-top: 7%;">
